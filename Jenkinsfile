@@ -7,8 +7,9 @@ pipeline {
                 echo 'Building..'
                 
                  dir('social-media-spring-main') {
-                  sh "pwd"
-                  sh 'mvn -N wrapper:wrapper -Dmaven=3.2.5'
+//                   sh "pwd"
+                sh 'ls'
+//                   sh 'mvn -N wrapper:wrapper -Dmaven=3.2.5'
                   sh 'sudo sh ./mvnw clean package -DskipTests'
                  }
              
