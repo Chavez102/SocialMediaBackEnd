@@ -25,7 +25,8 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
-                sh 'java jar .social-media-spring-main/target/*.jar'
+                sh 'ls'
+                sh 'java jar ./social-media-spring-main/target/*.jar'
             }
         }
     }
