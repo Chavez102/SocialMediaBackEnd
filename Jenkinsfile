@@ -5,8 +5,10 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
+                sh 'cd social-media-spring-main'
                 sh 'mvn -N wrapper:wrapper -Dmaven=3.2.5'
-                sh 'sudo sh ./social-media-spring-main/mvnw clean package -DskipTests'
+
+                sh 'sudo sh ./mvnw clean package -DskipTests'
                 
             }
         }
