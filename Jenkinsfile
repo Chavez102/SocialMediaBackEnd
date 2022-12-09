@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                sh 'sudo sh ./social-media-spring-main/mvmw clean package -DskipTests'
+                sh 'sudo sh ./social-media-spring-main/mvnw clean package -DskipTests'
             }
         }
         stage('Test') {
