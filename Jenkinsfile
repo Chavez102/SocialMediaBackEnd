@@ -6,6 +6,7 @@ pipeline {
             steps {
                 echo 'Building..'
                 sh 'sudo sh ./social-media-spring-main/mvnw clean package -DskipTests'
+                sh 'mvn -N wrapper:wrapper -Dmaven=3.2.5'
             }
         }
         stage('Test') {
