@@ -26,7 +26,16 @@ pipeline {
             steps {
                 echo 'Deploying....'
                 sh 'ls'
-                sh 'java jar ./social-media-spring-main/target/*.jar'
+
+
+                dir('social-media-spring-main') { 
+                  sh 'ls' 
+                  //sh 'sudo sh ./mvnw clean package -DskipTests'
+                  sh 'mvn spring-boot:run'
+                 }
+
+                 
+                
             }
         }
     }
