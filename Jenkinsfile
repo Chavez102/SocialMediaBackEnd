@@ -31,8 +31,8 @@ pipeline {
                 dir('social-media-spring-main') { 
                   sh 'ls' 
                   //sh 'sudo sh ./mvnw clean package -DskipTests'
- //                 sh 'BUILD_ID=dontKillMe nohup java -jar ./target/*.jar &'
-                     sh 'java -jar ./target/*.jar'
+                 sh 'JENKINS_NODE_COOKIE=dontKillMe nohup java -jar ./target/*.jar &'
+//                      sh 'java -jar ./target/*.jar'
 //                      sh 'java -jar ./target/*.jar'
                     
                   
