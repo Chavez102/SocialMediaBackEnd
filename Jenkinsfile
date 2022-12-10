@@ -31,7 +31,7 @@ pipeline {
                 dir('social-media-spring-main') { 
                   sh 'ls' 
                   //sh 'sudo sh ./mvnw clean package -DskipTests'
-                  sh 'mvn spring-boot:run'
+                  sh 'java -jar .taget/*.jar'
                  }
 
                  
