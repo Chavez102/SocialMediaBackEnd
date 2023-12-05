@@ -43,6 +43,7 @@ public class UserController {
 	
 	@PostMapping
 	public ResponseEntity<Boolean> checkUserExistsByEmail(@RequestBody User user,HttpSession session) {
+		System.out.print("post in user ");
 		User retrievedUser = userService.findUserByEmail(user.getEmail());
 		
 		if (retrievedUser != null) {
@@ -50,8 +51,12 @@ public class UserController {
 		}else {
 			return ResponseEntity.ok(false);
 		}
-		
-		
+	}
+	
+	@GetMapping("/friend/{email}")
+	public Optional<User> friend(@PathVariable("email") String email) {
+		return userService.findByCredentials(email);
+
 	}
 	
 }
